@@ -61,7 +61,7 @@ pipeline {
                 sh 'docker exec  php-fpm php artisan config:cache'
                 sh 'docker exec  php-fpm php artisan view:clear'
                 sh 'docker exec  php-fpm php artisan config:clear'
-		//sh 'docker exec $CONTAINER_ID mysql -uroot -pmy_password -e "SELECT * FROM my_table" '
+	
 		sh 'docker exec php-fpm mysql -uroot -ppassword -hdb mydatabase -e "SELECT * FROM users;"'
               
                 // Use Ansible playbook to deploy to DigitalOcean server
