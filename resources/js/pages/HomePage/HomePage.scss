@@ -1,0 +1,107 @@
+@import "../../../sass/mixins.scss";
+.home-page {
+  @include flexbox();
+  @include flex-direction(column-reverse);
+  overflow-y: hidden;
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 28% 50%;
+  background-image: url("../../../assets/img/bg.jpg");
+  @media (min-width: 992px) {
+    @include flex-direction(row);
+    background-image: url("../../../assets/img/bg.jpg");
+    background-position: center;
+  }
+  .logo-brand {
+    position: absolute;
+    width: 20%;
+    top: 2%;
+    left: 0;
+    @media (min-width: 992px) {
+      width: 14%;
+    }
+    max-width: 277px;
+  }
+
+  .left {
+    width: 100vw;
+    position: relative;
+    min-height: 50vh;
+    @media (min-width: 992px) {
+      min-height: 100vh;
+      width: 50vw;
+    }
+
+    .carousel-container {
+      pointer-events: none;
+      padding-top: 1vh;
+      padding-bottom: 1vh;
+      padding-right: 1vw;
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      margin: auto;
+      max-width: 90vw;
+      min-height: 50vh;
+      @media (min-width: 992px) {
+        max-width: 60vw;
+        min-height: 90vh;
+        padding-top: 5vh;
+        padding-right: 2vw;
+        margin-top: 10vh;
+      }
+      .landing-img {
+        padding-left: 1vw;
+        @media (min-width: 992px) {
+          padding-left: 1vw;
+        }
+      }
+    }
+  }
+
+  .right {
+    position: relative;
+    @include flexbox();
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+    @include align-items(center);
+    min-height: 50vh;
+    padding: 1vw;
+    @media (max-width: 992px) {
+      padding-top: 1rem;
+      @include justify-content(center);
+    }
+    @media (min-width: 992px) {
+      min-height: 100vh;
+    }
+    .logo-game {
+      height: 15vh;
+      margin-top: 1vh;
+      margin-bottom: 2vh;
+      @media (min-width: 800px) {
+        height: 30vh;
+      }
+    }
+
+    .headline-p {
+      color: #fff;
+      font-size: 1.4rem;
+      text-align: center;
+      font-family: "Lemonada", cursive;
+      line-height: 2.5rem;
+      max-width: 35rem;
+      font-weight: "500";
+      font-style: normal;
+      margin: 0;
+      @media (min-width: 992px) {
+        font-size: 2.4rem;
+        line-height: 5.2rem;
+        max-width: 70rem;
+      }
+    }
+  }
+}

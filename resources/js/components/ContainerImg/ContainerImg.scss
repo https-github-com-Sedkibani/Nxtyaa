@@ -1,0 +1,113 @@
+.container-img {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .children {
+    display: flex;
+    border-radius: 10px;
+    background-image: url("../../../assets/img/bg-form.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: fixed;
+    background-position: center center;
+    padding: 2rem;
+    padding-top: 3rem;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    @media (max-width: 992px) {
+      max-width: 100%;
+      background-size: cover;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      height: 70%;
+      width: 90%;
+    }
+    @media (min-width: 992px) {
+      min-height: 400px;
+      max-height: 500px;
+      position: relative;
+      width: 800px;
+    }
+    @media (min-width: 1200px) {
+      position: relative;
+      width: 900px;
+    }
+    @media (min-width: 1600px) {
+      position: relative;
+      min-height: 600px;
+      width: 1100px;
+      max-height: 800px;
+    }
+  }
+
+  .insta-img {
+    position: absolute;
+    width: 10%;
+    left: -5%;
+    top: -5%;
+    max-width: 170px;
+    z-index: 3;
+  }
+
+  #whatsapp {
+    z-index: 9;
+    pointer-events: none;
+    position: fixed;
+    right: 10%;
+    top: 60%;
+    width: 10%;
+    @media (min-width: 992px) {
+      width: 3%;
+    }
+    max-width: 50px;
+    z-index: 3;
+  }
+  #music1 {
+    z-index: 9;
+    max-width: 50px;
+    pointer-events: none;
+    position: fixed;
+
+    width: 10%;
+    z-index: 5;
+    top: 45%;
+    left: 15%;
+    @media (min-width: 992px) {
+      width: 20%;
+      left: 15%;
+    }
+  }
+  #music2 {
+    z-index: 9;
+    pointer-events: none;
+    position: fixed;
+    left: 20%;
+    width: 6%;
+    top: 75%;
+    max-width: 50px;
+    @media (min-width: 992px) {
+      width: 2%;
+      left: 20%;
+      top: 35%;
+    }
+  }
+
+  #heart {
+    z-index: 9;
+    pointer-events: none;
+    position: absolute;
+    max-width: 50px;
+    right: 25%;
+    width: 10%;
+    top: -10%;
+    @media (min-width: 992px) {
+      width: 3%;
+    }
+  }
+}

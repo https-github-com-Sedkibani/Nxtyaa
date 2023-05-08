@@ -1,0 +1,107 @@
+@import "../../../sass/mixins.scss";
+.form-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../../assets/img/bg-half.jpg");
+  @media (min-width: 992px) {
+    @include flex-direction(column);
+    background-image: url("../../../assets/img/bg-half.jpg");
+  }
+
+  .logo-brand {
+    position: absolute;
+    width: 25%;
+    bottom: unset;
+    top: 5%;
+    left: 0;
+    max-width: 150px;
+    @media (min-width: 992px) {
+      width: 14%;
+      bottom: 5%;
+      top: unset;
+    }
+  }
+
+  .logo-container {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    max-width: 13vw;
+    @media (min-width: 992px) {
+      max-width: 100px;
+    }
+    .logo-game {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .container-img {
+    position: relative;
+    .children {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 992px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2rem;
+    }
+    .container-btn-submit {
+      grid-column: 1/3;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+    input {
+      width: 100%;
+      text-align: center;
+      font-size: 1.2rem;
+      height: 4rem;
+      border-radius: 60px;
+      border: 3px solid #490093;
+      outline: none;
+      padding: 0 2rem;
+      font-weight: 500;
+      @media (min-width: 992px) {
+        border: 4px solid #490093;
+      }
+      color: #490093;
+      margin-bottom: 2rem;
+      background: #d7ecff;
+      &::placeholder {
+        color: #490093;
+      }
+      @media (min-width: 992px) {
+        height: 7rem;
+        font-size: 2rem;
+      }
+    }
+    .login-btn {
+      border-radius: 60px;
+    }
+  }
+  .error {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: #f7ccb1;
+    text-align: center;
+    font-weight: normal;
+  }
+}

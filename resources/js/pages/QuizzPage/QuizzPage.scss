@@ -1,0 +1,83 @@
+.quizz-page {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 10rem;
+  position: relative;
+  width: 100%;
+  justify-content: center;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../../assets/img/bg-half.jpg");
+  @media (min-width: 992px) {
+    flex-direction: column;
+    background-image: url("../../../assets/img/bg-half.jpg");
+  }
+
+  #whatsapp3 {
+    pointer-events: none;
+    position: absolute;
+    right: 2%;
+
+    top: 70%;
+    width: 10%;
+    @media (min-width: 992px) {
+      width: 3%;
+    }
+    max-width: 50px;
+  }
+  #music13 {
+    max-width: 50px;
+    pointer-events: none;
+    position: absolute;
+    left: 5%;
+    width: 7%;
+    top: 55%;
+    @media (min-width: 992px) {
+      width: 20%;
+      left: 5%;
+    }
+  }
+  #music23 {
+    pointer-events: none;
+    position: absolute;
+    left: -2%;
+    width: 6%;
+    top: 75%;
+    max-width: 50px;
+    @media (min-width: 992px) {
+      width: 2%;
+      left: 10%;
+      top: 35%;
+    }
+  }
+
+  #heart3 {
+    pointer-events: none;
+    position: absolute;
+    max-width: 50px;
+    right: 25%;
+    width: 10%;
+    top: -10%;
+    @media (min-width: 992px) {
+      width: 3%;
+    }
+  }
+}
+
+.edited-photo {
+  p {
+    color: #430582;
+    margin: 0;
+  }
+  > img {
+    height: 400px;
+    width: 100%;
+    object-fit: contain;
+  }
+}

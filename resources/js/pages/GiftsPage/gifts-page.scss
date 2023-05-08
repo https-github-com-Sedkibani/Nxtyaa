@@ -1,0 +1,160 @@
+@import "../../../sass/mixins.scss";
+
+.gifts-page {
+  @include flexbox();
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(space-around);
+  padding-top: 2rem;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../../assets/img/bg-half-mobile.jpg");
+  @media (min-width: 992px) {
+    @include justify-content(flex-start);
+    @include flex-direction(column);
+    background-image: url("../../../assets/img/bg-half.jpg");
+  }
+
+  .logo-container {
+    position: absolute;
+    right: 5%;
+    top: 8%;
+    display: flex;
+    justify-content: center;
+    max-width: 10vw;
+    @media (min-width: 992px) {
+      max-width: 100px;
+    }
+    .logo-game {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .logo-brand {
+    position: absolute;
+    width: 25%;
+    bottom: unset;
+    top: 5%;
+    left: 0;
+    max-width: 150px;
+    @media (min-width: 992px) {
+      width: 14%;
+      bottom: 5%;
+      top: unset;
+    }
+  }
+  #whatsapp2 {
+    pointer-events: none;
+    position: absolute;
+    right: 2%;
+
+    top: 30%;
+    width: 10%;
+    @media (min-width: 992px) {
+      width: 3%;
+    }
+    max-width: 50px;
+  }
+  #music12 {
+    max-width: 50px;
+    pointer-events: none;
+    position: absolute;
+    left: 1%;
+    width: 10%;
+    top: 15%;
+    @media (min-width: 992px) {
+      width: 20%;
+      left: 5%;
+    }
+  }
+  #music22 {
+    pointer-events: none;
+    position: absolute;
+    left: 2%;
+    width: 6%;
+    top: 75%;
+    max-width: 50px;
+    @media (min-width: 992px) {
+      width: 2%;
+      left: 20%;
+      top: 35%;
+    }
+  }
+
+  #heart2 {
+    pointer-events: none;
+    position: absolute;
+    max-width: 50px;
+    right: 25%;
+    width: 10%;
+    top: -10%;
+    @media (min-width: 992px) {
+      width: 3%;
+    }
+  }
+
+  .container-wrapper {
+    .container {
+      min-height: 80vh;
+      padding-top: 5vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      @media (min-width: 992px) {
+        min-width: 700px;
+      }
+      .spacer {
+        width: 20vw;
+        height: 3rem;
+      }
+      img {
+        display: block;
+        height: 150px;
+        width: auto;
+        margin: 1rem;
+        @media (min-width: 992px) {
+          height: 16vw;
+        }
+        max-height: 300px;
+        &.bigger {
+          height: 20vh;
+          @media (min-width: 992px) {
+            height: 20vw;
+          }
+        }
+        &.droppedDown {
+          margin-bottom: -5vw;
+        }
+        &.pulledTop {
+          margin-top: -7vw;
+
+          @media (min-width: 992px) {
+            height: 20vw;
+          }
+        }
+      }
+      .col {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        &:nth-child(2) {
+          flex-direction: row;
+          display: flex;
+          align-items: center;
+          @media (min-width: 992px) {
+            min-width: 500px;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}

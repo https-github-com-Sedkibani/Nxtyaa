@@ -1,0 +1,44 @@
+.participants-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .naming {
+    width: 50vw;
+    opacity: 0;
+    @media (min-width:992px){
+      width: 16vw;
+    }
+  }
+
+  .helper {
+    padding: 2rem;
+    opacity: 0;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    text-align: center;
+    @media (min-width:992px){
+      font-size: 3rem;
+    }
+  }
+
+  .counters {
+    opacity: 0;
+    width: 45vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    margin-bottom: 3rem;
+    @media (min-width:992px){
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .upload {
+    cursor: pointer;
+    max-width: 200px;
+    > img {
+      width: 100%;
+    }
+  }
+}

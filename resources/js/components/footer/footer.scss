@@ -1,0 +1,41 @@
+@import "../../../sass/mixins.scss";
+
+.footer-container {
+  @include flexbox();
+  @include justify-content(flex-end);
+  @include flex-direction(row);
+  @include align-items(center);
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  padding-right: 2vw;
+  // @media (max-width: 991px) {
+  //   display: none;
+  // }
+  .spacer-t {
+    color: white;
+    font-size: 23px;
+    margin-left: 10px;
+    margin-right: 10px;
+    @media (min-width: 992px) {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
+  .f-link {
+    cursor: pointer;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    @media (min-width: 992px) {
+      font-size: 20px;
+    }
+
+    @include transition(all, 0.2s, ease);
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

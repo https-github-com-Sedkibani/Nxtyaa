@@ -1,0 +1,77 @@
+.products-animation {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  @media (min-width: 992px) {
+    margin-left: 20%;
+  }
+  .product {
+    position: absolute;
+    height: 80%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    &.corno {
+      bottom: -40%;
+      height: 110%;
+    }
+  }
+  .image1 {
+    position: absolute;
+    height: 40%;
+    bottom: 20%;
+    margin: auto;
+    left: -5%;
+    mask-image: url("./circle.png");
+    mask-size: 0%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @media (max-width: 991px) {
+      left: 5%;
+    }
+    &.smaller {
+      height: 30%;
+    }
+    &.casette {
+      left: -5%;
+      @media (max-width: 991px) {
+        height: 30%;
+        left: 5%;
+        bottom: 30%;
+      }
+    }
+  }
+  .image2 {
+    position: absolute;
+    height: 20%;
+    bottom: 10%;
+    margin: auto;
+    right: 0;
+    mask-image: url("./circle.png");
+    mask-size: 0%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    @media (max-width: 991px) {
+      bottom: 30%;
+      right: 5%;
+    }
+    &.bigger {
+      height: 30%;
+      right: -10%;
+      bottom: 4%;
+      @media (max-width: 991px) {
+        bottom: 30%;
+        right: 5%;
+        height: 20%;
+      }
+    }
+
+    @media (min-width: 1920px) and (max-width: 2560px) {
+      bottom: 15%;
+    }
+  }
+}
