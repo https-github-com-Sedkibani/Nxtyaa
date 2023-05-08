@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import "./mixins.scss";
+* {
+  box-sizing: border-box;
+
+  font-family: "Lemonada", cursive;
+  font-weight: 400;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+html {
+  font-size: 10px;
+  --white-color: white;
+  @media (min-width: 992px) {
+    font-size: 7px;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 8px;
+  }
+  @media (min-width: 1400px) {
+    font-size: 9px;
+  }
+  @media (min-width: 1600px) {
+    font-size: 10px;
+  }
+}
+body {
+  min-height: 100vh;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #54b0ff;
+  margin: 0;
+}
+
+.page {
+  height: calc(100vh - 7rem);
+}
+
+.login-btn {
+  background: #430582;
+  border: none;
+  border-bottom: 5px solid #d2c2ff;
+  color: white;
+  font-family: "Lemonada", cursive;
+  border-radius: 24px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 18px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-shadow: 2px 2px 2px #8251b4;
+  cursor: pointer;
+  @include transition(all, 0.1s, ease);
+  @media (min-width: 992px) {
+    border-radius: 37px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    font-size: 25px;
+    line-height: 40px;
+  }
+  &:active {
+    border-bottom: 1px solid #d2c2ff;
+    margin-top: 4px;
+  }
+  &:hover {
+    opacity: 0.96;
+  }
+  &:focus {
+    outline: none;
+  }
+}
