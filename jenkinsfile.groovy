@@ -56,8 +56,10 @@ pipeline {
                
                sh 'COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d'
                sh 'docker exec  php1-fpm rm -rf composer.lock vendor'
-               sh  'docker exec  php1-fpm composer install  composer.phar update  --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts -o --no-dev'
-               sh ' docker exec  php1-fpm chmod -R 0777 /var/www/html/storage'
+               //sh  'docker exec  php1-fpm composer install  --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts -o --no-dev'
+               sh 'docker exec php1-fpm composer update --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts --no-dev -o'
+
+		    sh ' docker exec  php1-fpm chmod -R 0777 /var/www/html/storage'
                 sh 'docker exec  php1-fpm php artisan key:generate'
                 sh 'docker exec  php1-fpm php artisan config:cache'
                 sh 'docker exec  php1-fpm php artisan view:clear'
