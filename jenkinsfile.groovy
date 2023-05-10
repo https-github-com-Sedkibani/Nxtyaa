@@ -50,6 +50,8 @@ pipeline {
 	       sh 'docker exec php1-fpm php artisan nova:install'
 	       sh 'docker exec php1-fpm php artisan migrate'
 	       sh 'docker exec php1-fpm php artisan nova:user'
+	       sh 'docker exec php1-fpm php artisan nova:publish --force'
+	       sh 'docker exec php1-fpm php artisan view:clear'
 
                sh  'docker exec  php1-fpm composer install  --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts -o --no-dev'
               // sh 'docker exec php1-fpm composer update --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts --no-dev -o'
