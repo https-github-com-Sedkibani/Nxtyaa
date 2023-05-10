@@ -47,12 +47,16 @@ pipeline {
                sh 'COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d'
                sh 'docker exec  php1-fpm rm -rf composer.lock vendor'
 		    
+sh 'docker exec  php1-fpm composer update'
+
+sh 'php artisan nova:publish'
 	       sh 'docker exec php1-fpm php artisan nova:install'
 	       sh 'docker exec php1-fpm php artisan migrate'
 	       sh 'docker exec php1-fpm php artisan nova:user'
 	       sh 'docker exec php1-fpm php artisan nova:publish --force'
 	       sh 'docker exec php1-fpm php artisan view:clear'
-
+	 sh 'docker exec php1-fpm php artisan nova:install'
+	 sh 'docker exec php1-fpm php artisan migrate'
                sh  'docker exec  php1-fpm composer install  --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts -o --no-dev'
               // sh 'docker exec php1-fpm composer update --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts --no-dev -o'
 
