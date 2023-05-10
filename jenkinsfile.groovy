@@ -17,11 +17,7 @@ pipeline {
    
  
     
-       /* stage('Checkout') {
-            steps {  
-                git branch: 'main', credentialsId: 'SedkiBani', url: 'git@github.com:https-github-com-Sedkibani/app_laravel.git'
-            }
-        }*/
+    
         
         stage('Build') {
             steps {
@@ -41,13 +37,7 @@ pipeline {
                   }
             }           
             }      
-    /*   stage('Push to Docker Hub') {
-            steps {
-                            sh 'docker push banisedki/php-fpm:latest' 
-                            sh 'docker push banisedki/nxtya_nginx:latest'
-                  }
-                                   }
-*/
+ 
 
 
      
@@ -56,22 +46,14 @@ pipeline {
                
                sh 'COMPOSE_HTTP_TIMEOUT=480 docker-compose up -d'
                sh 'docker exec  php1-fpm rm -rf composer.lock vendor'
-               //sh  'docker exec  php1-fpm composer install  --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts -o --no-dev'
-               sh 'docker exec php1-fpm composer update --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts --no-dev -o'
+               sh  'docker exec  php1-fpm composer install  --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts -o --no-dev'
+              // sh 'docker exec php1-fpm composer update --ignore-platform-reqs --optimize-autoloader --prefer-dist --no-scripts --no-dev -o'
 
-		    sh ' docker exec  php1-fpm chmod -R 0777 /var/www/html/storage'
-                sh 'docker exec  php1-fpm php artisan key:generate'
-                sh 'docker exec  php1-fpm php artisan config:cache'
-                sh 'docker exec  php1-fpm php artisan view:clear'
-                sh 'docker exec  php1-fpm php artisan config:clear'
-	
-		/*sh 'docker exec php-fpm mysql -uroot -ppassword -hdb mydatabase -e "SELECT * FROM users;"'*/
-              
-                // Use Ansible playbook to deploy to DigitalOcean server
-                //ansiblePlaybook(
-                   // playbook: '/var/lib/jenkins/workspace/nxtya/ansible.yml',
-                    //inventory: '/var/lib/jenkins/workspace/nxtya/inventory.ini',
-                    //extras: "-e 'docker_image=nxtya:1.0'"
+	       sh ' docker exec  php1-fpm chmod -R 0777 /var/www/html/storage'
+               sh 'docker exec  php1-fpm php artisan key:generate'
+               sh 'docker exec  php1-fpm php artisan config:cache'
+               sh 'docker exec  php1-fpm php artisan view:clear'
+               sh 'docker exec  php1-fpm php artisan config:clear'
                 
             }
         
