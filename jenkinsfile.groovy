@@ -4,14 +4,14 @@ pipeline {
     stage ('prepare')
         { steps    {
                
-          sh 'rm -rf ./ci/infrastructure'
+          sh 'rm -rf ./infrastructure'
           sh ' rm -rf docker-compose.yml'
-          sh 'cp -r /var/www/ci/infrastructure/ .'
-          sh 'cp -r  /var/www/ci/infrastructure/docker/docker-compose.yml . '
+          sh 'cp -r /var/www/infrastructure/ .'
+          sh 'cp -r  /var/www/infrastructure/docker/docker-compose.yml . '
           sh 'cp -r .env.example .env '  
             
              //prepare ansible-playbook 
-         sh 'ansible-playbook -i ./ci/infrastructure/ansible/inventory/hosts.yml ./ci/infrastructure/ansible/playbooks/install-docker.yml '
+         sh 'ansible-playbook -i ./infrastructure/ansible/inventory/hosts.yml ./infrastructure/ansible/playbooks/install-docker.yml '
         }
          }
    
