@@ -25,9 +25,9 @@ pipeline {
         
         stage('Build') {
             steps {
-                sh 'docker build -t banisedki/php1-fpm:latest -f ./infrastructure/docker/php1-fpm/Dockerfile . '
+                sh 'docker build -t banisedki/php1-fpm:latest -f ./ci/infrastructure/docker/php1-fpm/Dockerfile . '
                 
-                sh 'docker build -t banisedki/nxtya1_nginx:latest -f ./infrastructure/docker/nginx1/Dockerfile . '
+                sh 'docker build -t banisedki/nxtya1_nginx:latest -f ./ci/infrastructure/docker/nginx1/Dockerfile . '
 
 			 // 'docker build -t nxtya:1.0 -f docker/Dockerfile .'
             }
